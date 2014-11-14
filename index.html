@@ -20,7 +20,7 @@ $(document).ready(function() {
 		return;
 	}
 
-	var ws = new WebSocket("ws://localhost:9000/rq");
+	var ws = new WebSocket("ws://hatch02.cs.unc.edu:9000/rq");
 
 	sendMsg = (function(ws) {
 		var ws = ws;
@@ -69,6 +69,10 @@ $(document).ready(function() {
 </script>
 </head>
 <body>
+	<button onclick="sendMsg({'cmd':'playpause'})">PlayPause</button>
+	<button onclick="sendMsg({'cmd':'volup'})">VolUp</button>
+	<button onclick="sendMsg({'cmd':'voldown'})">VolDown</button>
+	<button onclick="sendMsg({'cmd':'playlist'})">playlist</button>
 <pre>
 Format: sendMsg({'cmd':'COMMANDS' [,ARGS]})
 -------------------------------------------
